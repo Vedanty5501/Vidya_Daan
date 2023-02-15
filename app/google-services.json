@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "766242460464",
+    "project_id": "vidya-daan-d9404",
+    "storage_bucket": "vidya-daan-d9404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766242460464:android:568019e1d34de3535daef5",
+        "android_client_info": {
+          "package_name": "com.example.vidyadaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766242460464-qc0qi2s6fkp7kne6l3jivfjscic4k0so.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiP8-Ed2Ld9ncUf8NI6vI39mSv7oVYFFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766242460464-qc0qi2s6fkp7kne6l3jivfjscic4k0so.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

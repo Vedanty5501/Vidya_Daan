@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Register_donor extends AppCompatActivity {
 
     TextView login;
-    EditText inputemail,inputpassword,confirmpassword,inputname,inputdob,inputphone;
+    EditText inputemail,inputpassword,confirmpassword,inputname,inputdob,inputphone,inputpin;
     Button signupbtn;
     String emailpatt="^[a-zA-Z0-9+_.-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -49,6 +49,7 @@ public class Register_donor extends AppCompatActivity {
         confirmpassword=findViewById(R.id.confirmpassword);
         inputname=findViewById(R.id.inputname);
         inputphone=findViewById(R.id.inputphone);
+        inputpin=findViewById(R.id.inputpin);
         inputdob=findViewById(R.id.inputdob);
         signupbtn=findViewById(R.id.signupButton);
         progressDialog=new ProgressDialog(this);
@@ -78,6 +79,7 @@ public class Register_donor extends AppCompatActivity {
         String phone = inputphone.getText().toString();
         String pass  = inputpassword.getText().toString();
         String conpass = confirmpassword.getText().toString();
+        String pin = inputpin.getText().toString();
 
         if (name.isEmpty()){
             inputname.setError("Enter your Name");
@@ -115,7 +117,7 @@ public class Register_donor extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 String id_1 = snapshot.child("Donor_ID").getValue().toString();
                                 String reward = "0";
-                                Database database = new Database(name,id_1,dob,email,phone,pass,reward);
+                                Database database = new Database(name,id_1,dob,email,phone,pin,pass,reward);
                                 reference.child(id_1).setValue(database);
                                 id_1 = (Integer.parseInt(id_1)+1)+"";
                                 reference_id.child("Donor_ID").setValue(id_1);

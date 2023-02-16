@@ -1,21 +1,32 @@
 package com.example.vidyadaan;
 
 public class Database {
-    String name,dob,email,phone,pass,id,reward;
+    String name,dob,email,phone,pass,id,reward,pin;
+
 
     public Database() {
     }
 
-    public Database(String name,String id, String dob, String email, String phone, String pass,String reward) {
+    public Database(String name,String id, String dob, String email, String phone,String pin, String pass,String reward) {
         this.name = name;
         this.dob = dob;
         this.id = id;
         this.email = email;
         this.phone = phone;
+        this.pin = pin;
         this.pass = pass;
         this.reward = reward;
     }
 
+
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
     public String getReward() {
         return reward;
     }

@@ -1,5 +1,6 @@
 package com.example.vidyadaan;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.viewHolder> {
 
             request_id = itemView.findViewById(R.id.requestid);
             request_desc = itemView.findViewById(R.id.requestdesc);
+
+            request_id.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String id = request_id.getText().toString();
+                    Intent intent37 = new Intent(view.getContext(),view_request.class);
+                    intent37.putExtra("request",id);
+                    view.getContext().startActivity(intent37);
+                }
+            });
+            request_desc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String id = request_id.getText().toString();
+                    Intent intent37 = new Intent(view.getContext(),view_request.class);
+                    intent37.putExtra("request",id);
+                    view.getContext().startActivity(intent37);
+                }
+            });
         }
 
         public void setData(String ngo_request_id, String ngo_request_desc) {

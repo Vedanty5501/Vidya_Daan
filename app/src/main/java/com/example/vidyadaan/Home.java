@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApiNotAvailableException;
@@ -25,6 +27,7 @@ import java.util.List;
 
 public class Home extends AppCompatActivity {
 
+    TextView prof_text;
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     List<requestModel> requestdetails;
@@ -37,6 +40,16 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        prof_text = findViewById(R.id.prof_text);
+        prof_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this,profile_donor.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
 
         getData();
 

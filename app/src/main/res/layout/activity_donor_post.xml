@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/loginbkg"
-    tools:context=".new_request">
+    tools:context=".donor_post">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backbtn"
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Request"
+                android:text="New Post"
                 android:id="@+id/headingtext"
                 android:textSize="36sp"
                 android:layout_marginBottom="20dp"
@@ -50,31 +50,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="What type of donation you need ? "
+                android:text="What type of item you want to donate ? "
                 android:textSize="20dp"
                 android:layout_marginBottom="10dp"
                 android:textAlignment="center"
                 android:gravity="center"/>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:strokeWidth="2dp"
-            app:strokeColor="@color/black"
-            app:cardCornerRadius="4dp">
-
-            <Spinner
-                android:id="@+id/type_drop"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dropdown" />
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/black"
+                app:cardCornerRadius="4dp">
 
-        </com.google.android.material.card.MaterialCardView>
+                <Spinner
+                    android:id="@+id/type_drop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description "
+                android:text="Description of Item"
                 android:textSize="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/postbtn"
-                android:text="Post Request"
+                android:text="Add Item"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/purple"

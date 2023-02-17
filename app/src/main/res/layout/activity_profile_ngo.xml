@@ -15,10 +15,11 @@
 
         <TextView
             android:layout_width="126dp"
+            android:id="@+id/myrequest"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_marginLeft="10dp"
-            android:text="Needs"
+            android:text="My Requests"
             android:textSize="25dp"
             android:padding="3dp"
             android:textColor="@color/white"
@@ -29,7 +30,8 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="3dp"
-            android:text="Nearby \nNGOs"
+            android:id="@+id/item_avai"
+            android:text="Items Available"
             android:textSize="25dp"
             android:textColor="@color/white"
             android:textStyle="bold"/>
@@ -72,6 +74,15 @@
                 android:background="@color/purple"
                 android:orientation="vertical">
 
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/logoutbtn"
+                    android:text="LogOut"
+                    android:layout_gravity="right"
+                    android:backgroundTint="@color/purple"
+                    android:textSize="18sp"
+                    app:cornerRadius="25dp"/>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"

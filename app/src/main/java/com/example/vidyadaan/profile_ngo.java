@@ -3,9 +3,11 @@ package com.example.vidyadaan;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,11 +18,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class profile_ngo extends AppCompatActivity {
 
-    TextView outname,outaddress,outemail,outphone,outid;
+    TextView outname,outaddress,outemail,outphone,outid,myrequest,ngo_avail;
+    Button logout;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
     FloatingActionButton newpostbtn;
@@ -36,8 +44,46 @@ public class profile_ngo extends AppCompatActivity {
         outemail = findViewById(R.id.outemail);
         outphone = findViewById(R.id.outphone);
         newpostbtn = findViewById(R.id.newpostbtn);
+        myrequest = findViewById(R.id.myrequest);
+        logout = findViewById(R.id.logoutbtn);
+        ngo_avail = findViewById(R.id.item_avai);
 
         getdata();
+
+        ngo_avail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(profile_ngo.this,ngo_item_available.class);
+                profile_ngo.this.startActivity(intent);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String filename = "Userdetail.txt";
+                    FileOutputStream fos = openFileOutput(filename, Context.MODE_PRIVATE);
+                    String email = "";
+                    fos.write(email.getBytes());
+                    fos.flush();
+                    fos.close();
+                    Intent intent = new Intent(profile_ngo.this,Choose.class);
+                    profile_ngo.this.startActivity(intent);
+                }
+                catch(Exception e){
+                    Toast.makeText(profile_ngo.this, "No Login Detected", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        myrequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(profile_ngo.this,ngo_myrequest.class);
+                profile_ngo.this.startActivity(intent);
+
+            }
+        });
 
         newpostbtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +29,7 @@ public class new_request extends AppCompatActivity {
     Spinner type_drop;
     Button postbtn;
     EditText desc;
+    FloatingActionButton backbtn;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference,reference_id,reference_ngo;
     String id,don_type;
@@ -40,6 +42,7 @@ public class new_request extends AppCompatActivity {
         type_drop = findViewById(R.id.type_drop);
         postbtn = findViewById(R.id.postbtn);
         desc = findViewById(R.id.desid);
+        backbtn = findViewById(R.id.backbtn);
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.dropitems, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -54,6 +57,14 @@ public class new_request extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(new_request.this,profile_ngo.class);
+                startActivity(intent);
             }
         });
 

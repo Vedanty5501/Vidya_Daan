@@ -14,6 +14,21 @@
         android:theme="@style/Theme.VidyaDaan"
         tools:targetApi="31">
         <activity
+            android:name=".ngo_item_available"
+            android:exported="false" />
+        <activity
+            android:name=".donor_post"
+            android:exported="false" />
+        <activity
+            android:name=".donor_mapview"
+            android:exported="false" />
+        <activity
+            android:name=".ngo_request_status"
+            android:exported="false" />
+        <activity
+            android:name=".ngo_myrequest"
+            android:exported="false" />
+        <activity
             android:name=".view_request"
             android:exported="false" />
         <activity
